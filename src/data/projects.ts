@@ -25,6 +25,8 @@ export type Project = {
   cover: number[]
   /** Projet personnel open source (et non une application d'entreprise) */
   personal?: boolean
+  /** Adresse du code source (projets personnels publiés sur GitHub) : affiche un bouton « Voir le code » */
+  repo?: string
   /** Nom d'hôte affiché dans la barre d'adresse des captures (par défaut <slug>.intranet) */
   host?: string
 }
@@ -863,6 +865,55 @@ const BASE: Base[] = [
       { fr: 'Génération des fichiers CSV et dépôt sur le SFTP', en: 'Generating CSV files and dropping them on SFTP' },
       { fr: 'L’application mobile récupère les données, les commerciaux saisissent leurs visites', en: 'The mobile app picks up the data, sales reps log their visits' },
       { fr: 'Les visites reviennent par SFTP et sont importées dans X3', en: 'Visits come back over SFTP and are imported into X3' },
+    ],
+  },
+  {
+    slug: 'compresseur-ocr',
+    title: { fr: 'Compresseur d’images vérifié par OCR', en: 'OCR-verified image compressor' },
+    tagline: { fr: 'Des fichiers 100× plus légers, sans perdre un seul chiffre', en: 'Files 100× smaller without losing a single digit' },
+    company: GROUP,
+    kind: { fr: 'API + interface web', en: 'API + web interface' },
+    status: { fr: 'Dockerisée', en: 'Dockerised' },
+    impact: [
+      { value: { fr: '100×', en: '100×' }, label: { fr: 'fichiers jusqu’à 100 fois plus légers', en: 'files up to 100 times smaller' } },
+      { value: { fr: '0', en: '0' }, label: { fr: 'chiffre perdu : chaque montant relu par OCR', en: 'digits lost: every amount re-read by OCR' } },
+      { value: { fr: '2', en: '2' }, label: { fr: 'accès : API et interface web', en: 'ways in: API and web interface' } },
+    ],
+    tags: ['Rust', 'Angular', 'PaddleOCR', 'Docker'],
+    summary: {
+      fr: 'Un service qui compresse fortement les images de documents, puis relit chaque montant par OCR avant de livrer le fichier, pour garantir qu’aucun chiffre n’a été altéré.',
+      en: 'A service that heavily compresses document images, then re-reads every amount with OCR before delivering the file, guaranteeing no figure was altered.',
+    },
+    purpose: {
+      fr: 'Les documents scannés pèsent lourd, mais une compression trop forte peut rendre un montant illisible, ce qui est inacceptable sur des pièces comptables. Le compresseur réduit la taille des fichiers tout en vérifiant automatiquement que chaque montant reste lisible et identique.',
+      en: 'Scanned documents are heavy, but compressing too hard can make an amount unreadable, which is unacceptable for accounting records. The compressor shrinks files while automatically checking that every amount stays readable and identical.',
+    },
+    features: [
+      {
+        title: { fr: 'Compression forte', en: 'Heavy compression' },
+        text: { fr: 'Fichiers jusqu’à 100 fois plus légers, avec un moteur écrit en Rust.', en: 'Files up to 100 times smaller, with an engine written in Rust.' },
+      },
+      {
+        title: { fr: 'Vérification par OCR', en: 'OCR verification' },
+        text: { fr: 'Chaque montant est relu par OCR (PaddleOCR) avant la livraison du fichier compressé.', en: 'Every amount is re-read with OCR (PaddleOCR) before the compressed file is delivered.' },
+      },
+      {
+        title: { fr: 'API et interface web', en: 'API and web interface' },
+        text: { fr: 'Utilisable par d’autres applications via l’API, ou à la main depuis une interface Angular.', en: 'Usable by other applications through the API, or by hand from an Angular interface.' },
+      },
+    ],
+    stack: [
+      { label: { fr: 'Moteur', en: 'Engine' }, value: 'Rust' },
+      { label: { fr: 'Interface', en: 'Interface' }, value: 'Angular' },
+      { label: { fr: 'OCR', en: 'OCR' }, value: 'PaddleOCR' },
+      { label: { fr: 'Déploiement', en: 'Deployment' }, value: 'Docker' },
+    ],
+    security: [],
+    flow: [
+      { fr: 'Le document arrive par l’API ou par l’interface web', en: 'The document comes in through the API or the web interface' },
+      { fr: 'Le moteur Rust compresse l’image', en: 'The Rust engine compresses the image' },
+      { fr: 'L’OCR relit chaque montant sur le fichier compressé', en: 'OCR re-reads every amount on the compressed file' },
+      { fr: 'Le fichier n’est livré que si tous les montants sont intacts', en: 'The file is only delivered if every amount is intact' },
     ],
   },
 ]

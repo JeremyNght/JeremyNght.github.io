@@ -13,7 +13,7 @@ const USED = [
   'siPwa', 'siPuppeteer', 'siSage', 'siShadcnui', 'siRadixui', 'siReactrouter', 'siTanstack', 'siZod',
   'siJsonwebtokens', 'siLeaflet', 'siJest', 'siMinio',
   'siDotnet', 'siVuedotjs', 'siFastapi', 'siAngular', 'siSpringboot', 'siHtmx', 'siGithubactions', 'siOpenstreetmap', 'siNginx',
-  'siOpenjdk', 'siOllama', 'siPytest', 'siHuggingface', 'siGo', 'siGodotengine', 'siMeilisearch', 'siStripe', 'siGrafana', 'siPrometheus', 'siSqlalchemy', 'siVitest', 'siJunit5', 'siMaplibre', 'siDrizzle', 'siHibernate', 'siFlyway', 'siK6', 'siPnpm',
+  'siOpenjdk', 'siRust', 'siGithub', 'siOllama', 'siPytest', 'siHuggingface', 'siGo', 'siGodotengine', 'siMeilisearch', 'siStripe', 'siGrafana', 'siPrometheus', 'siSqlalchemy', 'siVitest', 'siJunit5', 'siMaplibre', 'siDrizzle', 'siHibernate', 'siFlyway', 'siK6', 'siPnpm',
 ]
 
 const lines = USED.map((name) => {

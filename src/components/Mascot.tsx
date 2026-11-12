@@ -32,7 +32,7 @@ const TIPS: Record<Spot, L[]> = {
   ],
   contact: [
     { fr: 'Un email suffit, je réponds vite. Promis !', en: 'An email is enough, I reply quickly. Promise!' },
-    { fr: 'Mon CV est téléchargeable juste ici.', en: 'You can download my CV right here.' },
+    { fr: 'Mon CV se consulte juste ici, et se télécharge en un clic.', en: 'You can view my CV right here, and download it in one click.' },
   ],
   project: [
     { fr: 'Utilisez les flèches ← → du clavier pour changer d’écran.', en: 'Use the ← → arrow keys to switch screens.' },

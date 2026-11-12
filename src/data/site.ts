@@ -8,4 +8,4 @@ export const SITE_URL = 'https://jeremy-nouhaillaguet.fr'
 export const SITE_NAME = 'Jérémy Nouhaillaguet · Développeur Full Stack'
 
 export const SITE_DESCRIPTION =
-  'Développeur full stack à Toulouse : 7 applications métier en production, React, Node.js, PostgreSQL et intégration ERP Sage X3. Ouvert à un CDI ou CDD.'
+  'Développeur full stack à Toulouse : plus de 10 applications métier en production, React, Node.js, PostgreSQL et intégration ERP Sage X3. Ouvert à un CDI ou CDD.'

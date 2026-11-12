@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AnimatePresence, m, type Variants } from 'motion/react'
-import { ArrowRight, ArrowUpRight, MousePointerClick, Truck, FileLock2, ArrowLeftRight } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, MousePointerClick, Truck, FileLock2, ArrowLeftRight, ScanText } from 'lucide-react'
 import { useI18n } from '../i18n/I18n'
 import { MORE_PROJECTS, SPOTLIGHT, projectNumber, shotSrc, type Project } from '../data/projects'
 import Reveal, { SectionHead } from './Reveal'
@@ -12,6 +12,7 @@ const OTHER_ICONS: Record<string, typeof Truck> = {
   'planning-transport': Truck,
   'portail-comptes': FileLock2,
   'connecteur-erp': ArrowLeftRight,
+  'compresseur-ocr': ScanText,
 }
 
 // Trois captures empilées qui s'écartent au survol

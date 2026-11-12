@@ -73,7 +73,7 @@ const person = {
   image: SITE_URL + '/brand/photo-square.webp',
   email: `mailto:${PROFILE.email}`,
   address: { '@type': 'PostalAddress', addressLocality: 'Toulouse', addressCountry: 'FR' },
-  sameAs: [PROFILE.linkedin],
+  sameAs: [PROFILE.linkedin, PROFILE.github],
   knowsLanguage: ['fr', 'en'],
   knowsAbout: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'SQL Server', 'Sage X3', 'Docker', 'PWA'],
   alumniOf: EDUCATION.map((e) => ({ '@type': 'EducationalOrganization', name: e.school })),

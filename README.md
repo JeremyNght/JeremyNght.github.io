@@ -1,6 +1,22 @@
-# Portfolio · Jérémy Nouhaillaguet
+# Jérémy Nouhaillaguet · Développeur Full Stack
 
-React 19 + Vite + TypeScript, animations avec Motion. Langue (FR/EN) et thème (clair/sombre) détectés depuis le navigateur, puis mémorisés si le visiteur les change.
+**👉 [jeremynght.github.io](https://jeremynght.github.io)**
+
+[![Aperçu du portfolio](public/og/home.jpg)](https://jeremynght.github.io)
+
+Développeur full stack à Toulouse : plus de dix applications métier mises en production (CRM mobile, SAV, inventaires, intégration ERP Sage X3), et des projets personnels en Java/Spring Boot, C#/.NET, Python et Rust. Ouvert à un CDI ou CDD.
+
+- 📄 CV : [français](public/cv/CV-Jeremy-Nouhaillaguet-FR.pdf) · [English](public/cv/CV-Jeremy-Nouhaillaguet-EN.pdf)
+- 💼 [LinkedIn](https://www.linkedin.com/in/j%C3%A9r%C3%A9my-nouhaillaguet)
+- ✉️ jeremynght@icloud.com
+
+Chaque projet du site se parcourt comme l'application réelle, à partir de captures d'écran anonymisées.
+
+---
+
+## Sous le capot
+
+React 19 + Vite + TypeScript, animations avec Motion. Chaque page est pré-rendue en HTML au build (affichage immédiat, référencement), puis publiée sur GitHub Pages par GitHub Actions. Langue (FR/EN) et thème (clair/sombre) détectés depuis le navigateur, puis mémorisés si le visiteur les change.
 
 ```bash
 npm install
@@ -25,8 +41,10 @@ L'adresse utilisée pour les aperçus de lien et le sitemap est fournie automati
 | Contenu | Fichier |
 | --- | --- |
 | Textes de l'interface (FR/EN) | `src/i18n/ui.ts` |
-| Expériences, formation, compétences, email, LinkedIn | `src/data/profile.ts` |
-| Projets (descriptions, chiffres d'impact, stack) | `src/data/projects.ts` |
+| Expériences, formation, compétences, email, LinkedIn, GitHub | `src/data/profile.ts` |
+| Projets (descriptions, chiffres d'impact, stack) | `src/data/projects.ts` (pro), `src/data/projects-personal.ts` (perso) |
+| Projets à la une sur l'accueil | `SPOTLIGHT_SLUGS` dans `src/data/projects.ts` |
+| Lien « Voir le code » d'un projet perso | champ `repo` du projet dans `src/data/projects-personal.ts` |
 | Légendes des captures | `src/data/shots.ts` |
 | Conseils de Mini‑Jérémy | `src/components/Mascot.tsx` |
 | Dessin de Mini‑Jérémy | `src/components/MiniMe.tsx` |

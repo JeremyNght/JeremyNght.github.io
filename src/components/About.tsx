@@ -69,6 +69,7 @@ export default function About() {
                 <Reveal key={s.label} as="li" delay={i * 0.08} className="stat">
                   <span className="stat-value">
                     <Counter value={s.value} />
+                    {s.suffix}
                   </span>
                   <span className="stat-label">{t(s.label)}</span>
                 </Reveal>

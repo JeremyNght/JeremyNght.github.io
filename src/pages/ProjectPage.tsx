@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { m } from 'motion/react'
-import { ArrowLeft, ArrowUpRight, CheckCircle2, FileText, Info, ShieldCheck } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2, FileText, Info, ShieldCheck } from 'lucide-react'
 import { useI18n } from '../i18n/I18n'
 import { PROJECTS, projectNumber } from '../data/projects'
 import BrowserDemo from '../components/BrowserDemo'
@@ -84,6 +84,11 @@ export default function ProjectPage() {
         {p.personal && (
           <m.div className="p-live" {...fade(0.3)}>
             <div className="p-live-actions">
+              {p.repo && (
+                <a className="btn btn-primary btn-lg" href={p.repo} target="_blank" rel="noopener noreferrer" aria-label={t('p.codeLabel')}>
+                  {t('p.code')} <Code2 size={16} aria-hidden />
+                </a>
+              )}
               <a className="btn btn-outline btn-lg" href={`/dossiers/${p.slug}.pdf`} target="_blank" rel="noopener" aria-label={t('p.dossierLabel')}>
                 {t('p.dossier')} <FileText size={16} aria-hidden />
               </a>

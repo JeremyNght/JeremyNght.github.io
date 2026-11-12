@@ -368,7 +368,7 @@ p {
   flex-direction: column;
   gap: 4px;
 }
-.mobile-menu a {
+.mobile-menu a:not(.mobile-cta) {
   font-family: var(--font-display);
   font-size: clamp(32px, 9vw, 44px);
   font-weight: 500;
@@ -383,8 +383,12 @@ p {
   font-size: 12px;
   color: var(--muted);
 }
+/* Bouton du bas : pleine largeur, contenu centré */
 .mobile-menu .mobile-cta {
   margin-top: auto;
+  width: 100%;
+  height: 54px;
+  font-size: 16px;
 }
 
 @media (max-width: 860px) {
@@ -2949,4 +2953,94 @@ p {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+/* ============ Bouton contour (général) ============ */
+.btn-outline {
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+}
+.btn-outline:hover {
+  border-color: var(--primary-text);
+  color: var(--primary-text);
+}
+
+/* ============ Aperçu du CV ============ */
+.cv-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 11, 18, 0.82);
+  backdrop-filter: blur(6px);
+}
+.cv-bar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px clamp(12px, 3vw, 24px);
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--border);
+}
+.cv-langs {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.cv-langs button {
+  height: 32px;
+  padding-inline: 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-2);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cv-langs button.active {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+.cv-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cv-btn {
+  height: 40px;
+  padding-inline: 16px;
+  font-size: 14px;
+  gap: 8px;
+}
+.cv-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(16px, 4vw, 40px) clamp(10px, 3vw, 24px) 48px;
+}
+.cv-paper {
+  display: block;
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  margin-inline: auto;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 600px) {
+  .cv-open {
+    display: none;
+  }
+  .cv-btn span {
+    font-size: 13.5px;
+  }
 }

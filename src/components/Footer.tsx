@@ -3,6 +3,7 @@ import { ArrowUp, Smile } from 'lucide-react'
 import { useMascotEnabled } from '../hooks/useMascot'
 import { useI18n } from '../i18n/I18n'
 import Signature from './Signature'
+import { PROFILE } from '../data/profile'
 
 export default function Footer() {
   const { t } = useI18n()
@@ -23,6 +24,12 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} Jérémy Nouhaillaguet · {t('footer.made')}</span>
         </div>
         <div className="footer-links">
+          <a className="to-top" href={PROFILE.github} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a className="to-top" href={PROFILE.linkedin} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
           {mounted && !mascotOn && (
             <button className="to-top" onClick={() => setMascot(true)}>
               <Smile size={15} />

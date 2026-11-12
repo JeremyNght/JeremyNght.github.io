@@ -5,6 +5,7 @@ export const PROFILE = {
   lastName: 'Nouhaillaguet',
   email: 'jeremynght@icloud.com',
   linkedin: 'https://www.linkedin.com/in/j%C3%A9r%C3%A9my-nouhaillaguet',
+  github: 'https://github.com/JeremyNght',
   cv: { fr: '/cv/CV-Jeremy-Nouhaillaguet-FR.pdf', en: '/cv/CV-Jeremy-Nouhaillaguet-EN.pdf' } as L,
 }
 
@@ -23,8 +24,8 @@ export const MARQUEE = [
   'GitLab',
 ]
 
-export const STATS: { value: number; label: 'about.stat1' | 'about.stat2' | 'about.stat3' | 'about.stat4' }[] = [
-  { value: 7, label: 'about.stat1' },
+export const STATS: { value: number; suffix?: string; label: 'about.stat1' | 'about.stat2' | 'about.stat3' | 'about.stat4' }[] = [
+  { value: 10, suffix: '+', label: 'about.stat1' },
   { value: 18, label: 'about.stat2' },
   { value: 20, label: 'about.stat3' },
   { value: 3, label: 'about.stat4' },

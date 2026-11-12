@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { AnimatePresence, m } from 'motion/react'
-import { Mail, Copy, Check, Download } from 'lucide-react'
+import { Mail, Copy, Check, FileText } from 'lucide-react'
+import CvViewer from './CvViewer'
 import { useI18n } from '../i18n/I18n'
 import { PROFILE } from '../data/profile'
 import Reveal from './Reveal'
 import Signature from './Signature'
+import { siGithub } from '../data/brand-icons'
 
 function LinkedInIcon() {
   return (
@@ -14,9 +16,19 @@ function LinkedInIcon() {
   )
 }
 
+function GitHubIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d={siGithub.path} />
+    </svg>
+  )
+}
+
 export default function Contact() {
   const { t, tr } = useI18n()
   const [copied, setCopied] = useState(false)
+  const [cvOpen, setCvOpen] = useState(false)
+  const closeCv = useCallback(() => setCvOpen(false), [])
 
   const copy = async () => {
     try {
@@ -53,8 +65,23 @@ export default function Contact() {
                 <LinkedInIcon />
                 LinkedIn
               </a>
-              <a className="btn btn-outline-white" href={tr(PROFILE.cv)} download>
-                <Download size={18} className="arrow-d" />
+              <a className="btn btn-outline-white" href={PROFILE.github} target="_blank" rel="noreferrer">
+                <GitHubIcon />
+                GitHub
+              </a>
+              {/* Ouvre l'aperçu ; sans JavaScript (ou Ctrl+clic), le lien ouvre directement le PDF */}
+              <a
+                className="btn btn-outline-white"
+                href={tr(PROFILE.cv)}
+                target="_blank"
+                rel="noopener"
+                onClick={(e) => {
+                  if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return
+                  e.preventDefault()
+                  setCvOpen(true)
+                }}
+              >
+                <FileText size={18} />
                 {t('contact.cv')}
               </a>
             </div>
@@ -70,6 +97,8 @@ export default function Contact() {
           </div>
         </Reveal>
       </div>
+
+      <AnimatePresence>{cvOpen && <CvViewer onClose={closeCv} />}</AnimatePresence>
 
       <AnimatePresence>
         {copied && (

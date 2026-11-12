@@ -9,7 +9,9 @@ import NotFound from './pages/NotFound'
 import { useI18n } from './i18n/I18n'
 import { useMascotEnabled } from './hooks/useMascot'
 
-import ProjectPage from './pages/ProjectPage'
+// Page projet (et sa démo de captures) chargée à part : l'accueil n'en a pas besoin
+const loadProjectPage = () => import('./pages/ProjectPage')
+const ProjectPage = lazy(loadProjectPage)
 // Le compagnon est chargé à part, après l'affichage de la page
 const Mascot = lazy(() => import('./components/Mascot'))
 const loadMotion = () => import('./motion-features').then((r) => r.default)
@@ -46,7 +48,11 @@ export default function App() {
 
   // Laisse la page se charger avant d'inviter le compagnon
   useEffect(() => {
-    const id = window.setTimeout(() => setReady(true), 1800)
+    const id = window.setTimeout(() => {
+      setReady(true)
+      // Précharge la page projet pour que le premier clic soit instantané
+      void loadProjectPage()
+    }, 1800)
     return () => window.clearTimeout(id)
   }, [])
 
@@ -77,12 +83,14 @@ export default function App() {
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
+          <Suspense fallback={null}>
           <Routes location={location}>
             <Route path="/" element={<Home />} />
             <Route path="/projets/:slug" element={<ProjectPage />} />
             <Route path="/projects/:slug" element={<ProjectPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
         </m.main>
       </AnimatePresence>
       <Footer />
