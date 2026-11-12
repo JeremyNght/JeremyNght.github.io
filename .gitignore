@@ -1,0 +1,12 @@
+node_modules
+dist
+*.local
+*.tsbuildinfo
+
+# Documents personnels et sources : ne jamais publier
+DOCS/
+
+# Fichiers locaux
+.claude/
+.env
+.env.*

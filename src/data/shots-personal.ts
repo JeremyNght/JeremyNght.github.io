@@ -1,0 +1,92 @@
+// Captures des projets personnels (les mêmes que dans leurs dossiers de présentation PDF)
+import type { Shot } from './shots'
+
+export const PERSONAL_SHOTS: Record<string, { shots: Shot[]; cover: number[] }> = {
+  "fiche-terrain": {
+    shots: [
+      { path: "/", fr: "Accueil : un seul champ, l’adresse du terrain", en: "Home: a single field, the address of the plot", h: 800 },
+      { path: "/ (suggestions d’adresses)", fr: "Saisie « 12 rue Pierre-Paul Riquet » : six adresses réelles proposées par la Base Adresse Nationale", en: "Typing “12 rue Pierre-Paul Riquet”: six real addresses suggested by the national address database", h: 800 },
+      { path: "/fiche/…", fr: "La fiche : parcelle cadastrale, zone du PLU, carte du contour et PDF à télécharger", en: "The sheet: cadastral plot, zoning, outline map and downloadable PDF", h: 800 },
+      { path: "/fiche/… (parcelle et urbanisme)", fr: "Parcelle AC 0175 (254 m²) et zone UM1-3 du PLUi-H, avec lien vers le règlement écrit", en: "Plot AC 0175 (254 m²) and UM1-3 zone of the local urban plan, linking to the written regulation", h: 800 },
+      { path: "/fiche/… (carte)", fr: "Carte Leaflet : contour exact de la parcelle sur le plan IGN et le cadastre", en: "Leaflet map: exact plot outline over the IGN base map and cadastre", h: 800 },
+      { path: "/fiche/… (contraintes)", fr: "6 prescriptions du PLU et 15 servitudes d’utilité publique, chacune liée à son acte officiel", en: "6 urban-plan prescriptions and 15 public easements, each linked to its official act", h: 800 },
+      { path: "/api/report/…/pdf", fr: "PDF d’une page généré côté serveur (QuestPDF) : contour, contraintes, sources et date", en: "One-page PDF generated server-side (QuestPDF): outline, constraints, sources and date", h: 1812 },
+      { path: "/ (aucune parcelle)", fr: "Place du Capitole : domaine public, pas de parcelle. Un message clair plutôt qu’une erreur", en: "Place du Capitole: public land, no plot. A clear message instead of an error", h: 800 },
+      { path: "/ (historique)", fr: "Fiches consultées récemment : réouverture immédiate depuis le cache de 7 jours", en: "Recently viewed sheets: instant reopening from the 7-day cache", h: 800 },
+    ],
+    cover: [2, 0, 1],
+  },
+  "passoire-ou-pepite": {
+    shots: [
+      { path: "/", fr: "Accueil : un champ unique (adresse ou commune) et le choix du rayon, sans inscription", en: "Home: a single field (address or town) and a radius choice, no sign-up", h: 800 },
+      { path: "/?q=Place du Capitole Toulouse", fr: "500 m autour du Capitole : 6 698 diagnostics, 10,2 % de passoires, classes énergie et climat", en: "500 m around the Capitole: 6,698 diagnostics, 10.2% thermal sieves, energy and climate classes", h: 800 },
+      { path: "/ui/search (risque par époque)", fr: "Risque de passoire par époque de construction : avant 1948, 11,8 % des 4 856 logements", en: "Thermal-sieve risk by construction period: pre-1948, 11.8% of 4,856 homes", h: 801 },
+      { path: "/ui/commune/31555/streets", fr: "Classement des rues de Toulouse : les mieux et les moins bien notées, export CSV", en: "Toulouse street ranking: best and worst rated, with CSV export", h: 1354 },
+      { path: "/ui/commune/31555/summary", fr: "Toulouse entière : 191 606 diagnostics, 4,4 % de passoires, note moyenne C", en: "All of Toulouse: 191,606 diagnostics, 4.4% thermal sieves, average grade C", h: 1473 },
+      { path: "/ui/search (trop peu de données)", fr: "Moins de 10 diagnostics dans la zone : les statistiques sont masquées pour protéger l’anonymat", en: "Fewer than 10 diagnostics in the area: statistics are hidden to protect anonymity", h: 800 },
+      { path: "/ui/search (adresse introuvable)", fr: "Adresse introuvable : un message d’erreur clair, jamais une page cassée", en: "Address not found: a clear error message, never a broken page", h: 800 },
+      { path: "/docs", fr: "Documentation OpenAPI interactive : les mêmes chiffres pour d’autres programmes", en: "Interactive OpenAPI documentation: the same figures for other programs", h: 800 },
+    ],
+    cover: [1, 2, 3],
+  },
+  "riviere-vivante": {
+    shots: [
+      { path: "/", fr: "Accueil : carte des 5 stations, pastille d’état (normal, vigilance, crue), mise à jour toutes les 60 s", en: "Home: map of the 5 stations, status dots (normal, watch, flood), refreshed every 60 s", h: 800 },
+      { path: "/ (résumé d’une station)", fr: "Un clic sur une station : débit, hauteur, température et heure de la dernière mesure", en: "Click a station: flow, level, temperature and time of the last reading", h: 800 },
+      { path: "/station/O200001001", fr: "Fiche de la Garonne à Portet : chiffres du moment, seuils et courbe des dernières 24 h", en: "Garonne at Portet sheet: current figures, thresholds and the last 24 h curve", h: 800 },
+      { path: "/station/O200001001 (7 jours)", fr: "Débit sur 7 jours : 1 987 mesures collectées, les vagues quotidiennes sont visibles", en: "Flow over 7 days: 1,987 readings collected, daily waves clearly visible", h: 800 },
+      { path: "/station/O200001001 (30 jours)", fr: "Débit sur 30 jours : 6 588 mesures, courbe moyennée à l’affichage, export CSV", en: "Flow over 30 days: 6,588 readings, curve averaged for display, CSV export", h: 800 },
+      { path: "/station/O200001001 (Touch)", fr: "Le Touch : un pic soudain, probablement un orage, vu grâce à la mesure toutes les 10 minutes", en: "The Touch: a sudden spike, probably a storm, caught thanks to 10-minute readings", h: 800 },
+      { path: "/station/O200001001 (température)", fr: "Température de l’eau : cycle jour/nuit et pic de mi-août au-delà de 28 °C", en: "Water temperature: day/night cycle and a mid-August peak above 28 °C", h: 800 },
+      { path: "/station/O200001001 (poissons)", fr: "Poissons observés (OFB) : 33 espèces, individus comptés et dernière observation", en: "Observed fish (OFB): 33 species, individuals counted and last sighting", h: 800 },
+      { path: "/collecteur", fr: "Santé du collecteur : trois tâches planifiées, contenu de la base et journal d’exécution", en: "Collector health: three scheduled jobs, database contents and run log", h: 833 },
+      { path: "/sources", fr: "Sources, licences et méthode : chaque donnée citée avec son lien", en: "Sources, licences and method: every dataset cited with its link", h: 800 },
+    ],
+    cover: [0, 2, 3],
+  },
+  "toulouse-a-l-ombre": {
+    shots: [
+      { path: "/", fr: "Accueil : carte de Toulouse, départ et arrivée, bouton de démonstration en un clic", en: "Home: map of Toulouse, start and end fields, one-click demo button", h: 800 },
+      { path: "/ (saisie d’adresse)", fr: "Saisie « rue Saint » : suggestions de rues réelles dès trois lettres (Base Adresse Nationale)", en: "Typing “rue Saint”: real street suggestions after three letters (national address database)", h: 943 },
+      { path: "/ (rue Saint-Rome → allées Jules-Guesde)", fr: "Trajet calculé automatiquement : 1,37 km et 64/100 d’ombre contre 55/100 pour le plus court", en: "Route computed automatically: 1.37 km and 64/100 shade versus 55/100 for the shortest", h: 800 },
+      { path: "/ (Capitole → Jardin des Plantes)", fr: "Itinéraire ombragé coloré rue par rue (orange au soleil, vert à l’ombre), plus court en pointillés bleus", en: "Shaded route coloured street by street (orange in sun, green in shade), shortest as blue dashes", h: 800 },
+      { path: "/ (le plus court)", fr: "Après un clic sur « Le plus court » : le tracé bleu passe au premier plan (51/100)", en: "After clicking “Shortest”: the blue route comes to the front (51/100)", h: 800 },
+      { path: "/ (clics sur la carte)", fr: "Départ et arrivée posés par deux clics : l’ombragé suit les boulevards plantés (86/100 contre 28/100)", en: "Start and end placed by two clicks: the shaded route follows tree-lined boulevards (86/100 vs 28/100)", h: 800 },
+      { path: "/ (arbres et fiche)", fr: "Fort zoom : chaque arbre est un rond vert, la fiche donne espèce, hauteur estimée et stade", en: "Zoomed in: every tree is a green dot, its sheet gives species, estimated height and growth stage", h: 800 },
+      { path: "/ (mode sombre)", fr: "Mode sombre : carte assombrie, couleurs soleil / ombre toujours lisibles", en: "Dark mode: darkened map, sun / shade colours remain readable", h: 800 },
+    ],
+    cover: [3, 2, 5],
+  },
+  "source-sure": {
+    shots: [
+      { path: "/c/1", fr: "Réponse sourcée : chaque phrase renvoie à sa source, seules les sources citées sont affichées", en: "Sourced answer: every sentence points to its source, only cited sources are shown", h: 800 },
+      { path: "/c/1 (source)", fr: "La source ouverte : passage surligné, contexte, pertinence et PDF à la bonne page", en: "The opened source: highlighted passage, context, relevance and the PDF at the right page", h: 800 },
+      { path: "/c/2 (Finance)", fr: "Étanchéité : la Finance obtient sa réponse, mais « je ne sais pas » sur un sujet de l’espace RH", en: "Isolation: Finance gets its answer, but “I don’t know” on an HR-space topic", h: 800 },
+      { path: "/documents", fr: "Documents de l’espace RH : formats, versions, passages et état d’indexation", en: "HR space documents: formats, versions, passages and indexing status", h: 800 },
+      { path: "/documents (nouvelle version)", fr: "Nouvelle version d’un document : 2 passages réutilisés, 2 nouveaux, rien d’autre n’est recalculé", en: "New document version: 2 passages reused, 2 new, nothing else recomputed", h: 800 },
+      { path: "/admin", fr: "Administration : réponses, « je ne sais pas », utilité, temps de réponse, contenu indexé", en: "Administration: answers, “I don’t know”, usefulness, response time, indexed content", h: 800 },
+      { path: "/admin (droits)", fr: "Matrice des droits : quelles équipes lisent quels espaces", en: "Permission matrix: which teams read which spaces", h: 800 },
+      { path: "/evaluation", fr: "Évaluation sur 40 questions : hybride 82,5 %, vecteurs 80 %, plein texte 72,5 %", en: "Evaluation on 40 questions: hybrid 82.5%, vectors 80%, full text 72.5%", h: 800 },
+      { path: "/", fr: "Connexion : cinq comptes de démonstration, un par profil", en: "Sign-in: five demo accounts, one per profile", h: 800 },
+      { path: "/api/docs", fr: "Documentation OpenAPI de l’API", en: "OpenAPI documentation of the API", h: 800 },
+    ],
+    cover: [1, 0, 7],
+  },
+  "creneau": {
+    shots: [
+      { path: "/agenda", fr: "Glisser-déposer : le rendez-vous de Camille confié à Sarah, à 12 h, en un geste", en: "Drag and drop: Camille’s appointment handed to Sarah at noon, in one move", h: 800 },
+      { path: "/e/salon-lumiere", fr: "Page de réservation publique : prestation, employé, créneaux réellement libres", en: "Public booking page: service, staff member, truly free slots", h: 800 },
+      { path: "/agenda (jour)", fr: "Agenda du jour : une colonne par employé, fiche du rendez-vous et statuts", en: "Day calendar: one column per staff member, appointment details and statuses", h: 800 },
+      { path: "/agenda (semaine)", fr: "Vue semaine de l’équipe, avec rendez-vous et chiffre d’affaires prévus", en: "Team week view, with appointments and expected revenue", h: 800 },
+      { path: "/gestion", fr: "Tableau de bord : taux de no-show, de remplissage, chiffre d’affaires sur 30 jours", en: "Dashboard: no-show rate, occupancy rate, 30-day revenue", h: 800 },
+      { path: "/mailpit/", fr: "E-mail de confirmation reçu par la cliente (Mailpit en local)", en: "Confirmation email received by the customer (Mailpit locally)", h: 800 },
+      { path: "/mes-rendez-vous", fr: "Espace client : tous ses rendez-vous, tous établissements, état des rappels", en: "Customer area: all their appointments, all businesses, reminder status", h: 800 },
+      { path: "/gestion (équipe)", fr: "Plan gratuit : l’ajout d’un deuxième employé est refusé avec un message clair", en: "Free plan: adding a second staff member is refused with a clear message", h: 800 },
+      { path: "/paiement-demo", fr: "Passage au plan Pro : parcours de paiement Stripe en mode test (simulé sans clé)", en: "Upgrade to Pro: Stripe test-mode payment flow (simulated without a key)", h: 800 },
+      { path: "/admin", fr: "Super-admin : tous les établissements, abonnements et activité sur 30 jours", en: "Super-admin: all businesses, subscriptions and 30-day activity", h: 800 },
+      { path: "/isolation", fr: "Isolation testée en direct : 200 pour son salon, 404 pour les autres établissements", en: "Isolation tested live: 200 for her salon, 404 for the other businesses", h: 800 },
+      { path: "/agenda (employé)", fr: "Un employé ne voit que ses propres rendez-vous", en: "A staff member only sees their own appointments", h: 800 },
+    ],
+    cover: [0, 1, 4],
+  },
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Jérémy Nouhaillaguet · Développeur Full Stack</title>
+    <meta
+      name="description"
+      content="Portfolio de Jérémy Nouhaillaguet, développeur & intégrateur logiciel full stack à Toulouse : applications métier React, Node.js et intégration ERP Sage X3."
+    />
+    <meta name="author" content="Jérémy Nouhaillaguet" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F7F7F4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0B0C12" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jérémy Nouhaillaguet · Développeur Full Stack" />
+    <meta
+      property="og:description"
+      content="Applications métier conçues de A à Z : React, Node.js, PostgreSQL, SQL Server et intégration ERP Sage X3."
+    />
+    <meta property="og:image" content="/og/home.jpg" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <script>
+      // Applique thème et langue avant le premier rendu (évite le flash)
+      ;(function () {
+        var d = document.documentElement
+        var t = null
+        var l = null
+        try {
+          t = localStorage.getItem('theme')
+          l = localStorage.getItem('lang')
+        } catch (e) {}
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        if (l !== 'fr' && l !== 'en') {
+          l = (navigator.language || 'fr').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en'
+        }
+        d.dataset.theme = t
+        d.lang = l
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Ce site nécessite JavaScript. / This site requires JavaScript.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
