@@ -8,7 +8,14 @@ import Reveal, { SectionHead } from './Reveal'
 function Counter({ value }: { value: number }) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
-  const [n, setN] = useState(0)
+  // La vraie valeur dans le HTML pré-rendu (Google, aperçus de lien) ;
+  // l'animation repart de 0 seulement quand le compteur entre à l'écran.
+  const [n, setN] = useState(value)
+  // Une fois la page active, remet à 0 les compteurs pas encore visibles (pas de saut visible au défilement)
+  useEffect(() => {
+    if (!inView) setN(0)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   useEffect(() => {
     if (!inView) return
     const controls = animate(0, value, {

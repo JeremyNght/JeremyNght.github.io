@@ -55,7 +55,7 @@ export const UI = {
 
   'projects.kicker': { fr: "mes projets", en: "my work" },
   'projects.title': { fr: "Ce que j’ai construit", en: "What I’ve built" },
-  'projects.subtitle': { fr: "Applications métier utilisées chaque jour et projets personnels open source, tous conçus et développés seul. Ouvrez un projet : vous pourrez cliquer dedans comme si vous y étiez.", en: "Business applications used every day and open-source side projects, all designed and built by me. Open one and click around as if you were there." },
+  'projects.subtitle': { fr: "Applications métier utilisées chaque jour et projets personnels, tous conçus et développés seul. Ouvrez un projet : vous pourrez cliquer dedans comme si vous y étiez.", en: "Business applications used every day and side projects, all designed and built by me. Open one and click around as if you were there." },
   'projects.open': { fr: 'Explorer le projet', en: 'Explore project' },
   'projects.screens': { fr: 'écrans à tester', en: 'screens to try' },
   'projects.moreTitle': { fr: 'Tous les autres projets', en: 'All other projects' },
@@ -110,8 +110,8 @@ export const UI = {
   'p.dossier': { fr: 'Dossier de présentation (PDF)', en: 'Presentation file (PDF, French)' },
   'p.dossierLabel': { fr: 'Ouvrir le dossier de présentation PDF avec les captures (nouvel onglet)', en: 'Open the PDF presentation file with screenshots, in French (new tab)' },
   'p.roleTextPersonal': {
-    fr: 'Projet personnel conçu et réalisé seul, de bout en bout : cahier des charges, architecture, modélisation de la base, serveur, interface, tests automatiques, intégration continue GitHub Actions, documentation et déploiement Docker Compose en une commande. Code publié sous licence MIT.',
-    en: 'Personal project designed and built on my own, end to end: specification, architecture, database modelling, server, interface, automated tests, GitHub Actions continuous integration, documentation and one-command Docker Compose deployment. Code released under the MIT licence.',
+    fr: 'Projet personnel conçu et réalisé seul, de bout en bout : cahier des charges, architecture, modélisation de la base, serveur, interface, tests automatiques, intégration continue GitHub Actions, documentation et déploiement Docker Compose en une commande.',
+    en: 'Personal project designed and built on my own, end to end: specification, architecture, database modelling, server, interface, automated tests, GitHub Actions continuous integration, documentation and one-command Docker Compose deployment.',
   },
   'p.company': { fr: 'Contexte', en: 'Context' },
   'p.type': { fr: 'Type', en: 'Type' },

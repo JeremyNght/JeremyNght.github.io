@@ -1,9 +1,9 @@
-// Projets personnels open source ; le dossier de présentation PDF de chacun est dans public/dossiers/<slug>.pdf.
+// Projets personnels ; le dossier de présentation PDF de chacun est dans public/dossiers/<slug>.pdf.
 import type { L } from '../i18n/I18n'
 import type { ProjectBase } from './projects'
 
-const PERSONAL: L = { fr: 'Projet personnel · open source', en: 'Personal project · open source' }
-const OPEN: L = { fr: 'Open source (MIT)', en: 'Open source (MIT)' }
+const PERSONAL: L = { fr: 'Projet personnel', en: 'Personal project' }
+const DONE: L = { fr: 'Terminé', en: 'Complete' }
 
 export const PERSONAL_BASE: ProjectBase[] = [
   {
@@ -14,7 +14,7 @@ export const PERSONAL_BASE: ProjectBase[] = [
     tagline: { fr: 'Une adresse, et tout ce qu’on a le droit de faire sur le terrain', en: 'One address, and everything you are allowed to do on the plot' },
     company: PERSONAL,
     kind: { fr: 'Application web + API', en: 'Web app + API' },
-    status: OPEN,
+    status: DONE,
     impact: [
       { value: { fr: '≈ 4 s', en: '≈ 4 s' }, label: { fr: 'pour une première fiche, 0,2 s ensuite grâce au cache de 7 jours', en: 'for a first sheet, 0.2 s afterwards thanks to the 7-day cache' } },
       { value: { fr: '21', en: '21' }, label: { fr: 'contraintes trouvées sur l’exemple : 6 prescriptions et 15 servitudes', en: 'constraints found on the example: 6 prescriptions and 15 easements' } },
@@ -94,7 +94,7 @@ export const PERSONAL_BASE: ProjectBase[] = [
     tagline: { fr: 'La vraie performance énergétique des logements d’un quartier', en: 'The real energy performance of a neighbourhood’s homes' },
     company: PERSONAL,
     kind: { fr: 'Application web + API', en: 'Web app + API' },
-    status: OPEN,
+    status: DONE,
     impact: [
       { value: { fr: '191 606', en: '191,606' }, label: { fr: 'diagnostics DPE agrégés pour la seule ville de Toulouse', en: 'EPC diagnostics aggregated for the city of Toulouse alone' } },
       { value: { fr: '< 50 ms', en: '< 50 ms' }, label: { fr: 'pour une réponse déjà en mémoire Redis (vérifié par un test)', en: 'for an answer already in Redis memory (checked by a test)' } },
@@ -173,7 +173,7 @@ export const PERSONAL_BASE: ProjectBase[] = [
     tagline: { fr: 'La santé des rivières autour de Toulouse, en un coup d’œil', en: 'The health of the rivers around Toulouse at a glance' },
     company: PERSONAL,
     kind: { fr: 'Tableau de bord + collecteur', en: 'Dashboard + collector' },
-    status: OPEN,
+    status: DONE,
     impact: [
       { value: { fr: '5', en: '5' }, label: { fr: 'stations suivies sur la Garonne, l’Ariège, le Touch et la Save', en: 'stations tracked on the Garonne, Ariège, Touch and Save rivers' } },
       { value: { fr: '10 min', en: '10 min' }, label: { fr: 'entre deux relevés, 5 requêtes seulement vers Hub’Eau', en: 'between readings, just 5 requests to Hub’Eau' } },
@@ -252,7 +252,7 @@ export const PERSONAL_BASE: ProjectBase[] = [
     tagline: { fr: 'L’itinéraire à pied le plus ombragé, et où boire en route', en: 'The shadiest walking route, and where to drink on the way' },
     company: PERSONAL,
     kind: { fr: 'Application web cartographique', en: 'Web mapping app' },
-    status: OPEN,
+    status: DONE,
     impact: [
       { value: { fr: '120 224', en: '120,224' }, label: { fr: 'arbres de la ville pris en compte dans le score d’ombre', en: 'city trees factored into the shade score' } },
       { value: { fr: '131 376', en: '131,376' }, label: { fr: 'tronçons de rues et chemins piétons, chacun avec son score', en: 'street and footpath segments, each with its own score' } },
@@ -331,7 +331,7 @@ export const PERSONAL_BASE: ProjectBase[] = [
     tagline: { fr: 'L’IA qui répond avec les documents de l’entreprise, et cite ses sources', en: 'The AI that answers from company documents, and cites its sources' },
     company: PERSONAL,
     kind: { fr: 'Recherche IA (RAG) + API', en: 'AI search (RAG) + API' },
-    status: OPEN,
+    status: DONE,
     impact: [
       { value: { fr: '82,5 %', en: '82.5%' }, label: { fr: 'de réponses correctes sur 40 questions de référence (hybride, contre 80 % vecteurs seuls)', en: 'correct answers on 40 reference questions (hybrid, vs 80% vectors only)' } },
       { value: { fr: '0', en: '0' }, label: { fr: 'passage d’une autre équipe lu par la recherche : droits filtrés dans la requête SQL, test dédié', en: 'passages from another team read by the search: rights filtered in the SQL query, dedicated test' } },
@@ -411,7 +411,7 @@ export const PERSONAL_BASE: ProjectBase[] = [
     tagline: { fr: 'Les rendez-vous en ligne de plusieurs établissements, chacun dans son espace isolé', en: 'Online booking for many businesses, each in its own isolated space' },
     company: PERSONAL,
     kind: { fr: 'Application web multi-établissements + API', en: 'Multi-tenant web app + API' },
-    status: OPEN,
+    status: DONE,
     impact: [
       { value: { fr: '1 sur 8', en: '1 in 8' }, label: { fr: 'réservation acceptée quand 8 clients prennent le même créneau au même instant (test dédié)', en: 'booking accepted when 8 customers take the same slot at the same instant (dedicated test)' } },
       { value: { fr: '404', en: '404' }, label: { fr: 'pour toute lecture ou écriture vers un autre établissement : filtre Hibernate + garde JPA, testés', en: 'for any read or write to another business: Hibernate filter + JPA guard, tested' } },

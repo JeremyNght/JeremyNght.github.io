@@ -23,7 +23,7 @@ export type Project = {
   flow?: L[]
   shots: Shot[]
   cover: number[]
-  /** Projet personnel open source (et non une application d'entreprise) */
+  /** Projet personnel (et non une application d'entreprise) */
   personal?: boolean
   /** Adresse du code source (projets personnels publiés sur GitHub) : affiche un bouton « Voir le code » */
   repo?: string
